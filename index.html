@@ -122,7 +122,7 @@ var hd=$('#hd');$('#menu').onclick=function(){hd.classList.toggle('open')};
 var sl=document.querySelectorAll('.slide'),dt=document.querySelectorAll('.dots i'),n=0;
 setInterval(function(){sl[n].classList.remove('on');dt[n].classList.remove('on');n=(n+1)%sl.length;sl[n].classList.add('on');dt[n].classList.add('on')},4000);
 /* school search */
-var schools=['Blaine','Centennial','Cretin-Derham Hall','Duluth East','Eden Prairie','Edina','Hermantown','Lakeville North','Maple Grove','Mankato West','Minnetonka','Moorhead','Rochester Mayo','Rosemount','St. Cloud Tech','Stillwater','Totino-Grace','Wayzata'];
+var schools=['Blaine','Centennial','Cretin-Derham Hall','Duluth East','Eden Prairie','Edina','Hermantown','Lakeville North','Maple Grove','Mankato West','Minnetonka','Moorhead','Rochester Mayo','Rosemount','St. Cloud Tech','Stillwater','Totino-Grace','Wayzata','cooper'];
 var q=$('#q'),res=$('#res');
 function find(){var v=q.value.trim().toLowerCase(),m=schools.filter(function(s){return !v||s.toLowerCase().indexOf(v)>-1}).slice(0,6);
 res.hidden=false;res.innerHTML='';
