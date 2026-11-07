@@ -147,6 +147,19 @@ var P={Live:'<div class="row"><div>Lakeview vs. Riverside<small>Boys Hockey<span
 Brackets:'<div class="br"><div><b>Quarterfinals</b><span>Lakeview</span><span>Eastside</span><span>Northfield</span><span>Central</span></div><div><b>Semifinals</b><span>Lakeview</span><span>Northfield</span></div><div><b>Section Final</b><span>TBD</span></div></div>',
 'State Tournament':'<div class="row"><div>Boys Hockey State Tournament<small>Dates and venue to be announced</small></div></div><div class="row"><div>Girls Basketball State Tournament<small>Dates and venue to be announced</small></div></div><div class="row"><div>State Track &amp; Field Meet<small>Dates and venue to be announced</small></div></div>'};
 var LT=Object.keys(P),lt='Live';
+  // Link and activate the sport navigation filter buttons
+_('.chips a, .pills button, [data-fs]').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const clickedSport = this.textContent.trim();
+    
+    // Clear out standard section lists and show filtering update text
+    const trackerTitle = document.querySelector('#seasons .subrow');
+    if (trackerTitle) {
+      trackerTitle.innerHTML = `Showing schedules & upcoming tournaments for: <strong style="color:var(--gold);">${clickedSport}</strong>`;
+    }
+  });
+});
 function live(){var e=$('#lt');e.innerHTML='';LT.forEach(function(t){var b=document.createElement('button');b.textContent=t;b.className=t===lt?'on':'';b.onclick=function(){lt=t;live()};e.appendChild(b)});$('#lp').innerHTML=P[lt]}
 live();
 /* newsletter (demo) */
